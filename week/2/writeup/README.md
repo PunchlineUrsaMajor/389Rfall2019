@@ -32,4 +32,8 @@ From dnsdumpster of wattsamp.net: *CMSC389R-{Do_you-N0T_See_this}
 
 ### Part 2 (75 pts)
 
-*Please use this space to detail your approach and solutions for part 2. Don't forget to upload your completed source code to this /writeup directory as well!*
+The stub.py script automates the process of attempting logging in to ejnorman84's account. First, it establishes a connection with 157.230.179.99 port 1337 and waits for a response (the captcha). The solve_captcha method takes the socket and receives the captcha, splits it up, and evaluates the math, sending back the result. Sometimes, the recv() call comes before the server sends the full captcha, but not often enough to warrant a longer sleep, so if it fails, I just try again with a different array index. After solving the captcha, I send the username and current password and wait for the response. I didn't know the "pass" message ahead of time, so I just counted anything that's not "Fail" as a possible success. Sometimes, the server responds a little slowly, so the "Password:" prompt doesn't arrive until right before the "Fail" response, which triggers as a possible success. Finally, I used python's multiprocessing to speed up the process. I could've waited until the map returned to inspect the responses, but I didn't want to wait for all 14 million guesses, so I just kept an eye on the output until I saw "Success!" for hello1. My only concern was that the username wasn't ejnorman84, so if I somehow got through all 14 million passwords in rockyou without a success, I would've tried ejnorman and ejnoman.
+
+Once I was in the shell, I just looked around, figured the best place to look was where Eric's personal data would be stored in the "/home" directory, and the flag was there!
+
+Flag! CMSC389R-{!enough_nrg_4_a_str0ng_Pa$$wrd}
