@@ -12,10 +12,15 @@ Digital acknowledgement: Charles Schneider
 ### Part 1 (40 pts)
 
 Given the nature of the questions, I think it would be best to frame the pretext as a fraud alert call from Eric's mother's bank. Assuming I could find Eric's mother's current name through OSINT, I could pose as an identity protection agent from some common bank (like Bank of America) that his mother likely has an account with. I could claim that there are large charges on his mother's account and abnormal web activity that suggest his mother's online banking account has been hacked, requiring immediate verification, but she has not responded, and Eric is listed as an emergency contact associated with the account. I would really stress the urgency of the issue, hopefully pressuring Eric to answer quickly and without much thought.  
+
 First, I would claim to need to verify Eric's identity and association with his mother. I would ask some throwaway questions like "What is the zip code associated with this account?", "Are there any joint owners of this account?", and somewhere in there ask "Has your mother gone by any other names?", hopefully eliciting his mother's maiden name.  
+
 Once finished with the "verification" questions, I can start trying to press for more information under the guise of correcting malicious edits to her account. "It seems there have been a few recent logins from unusual locations, does access from Internet Explorer in the Denver area sound correct?" Hopefully this would elicit what browser his mother usually uses.  
+
 I could also claim that the attacker edited some security questions to prevent Eric's mother from reseting her password, asking Eric to verify if the answers to some questions are correct.  
+
 I could ask standard questions like "It says the make and model of her first car was a Honda Civic, is this correct?" and ask for any corrections. Continuing, I could ask "It says here she was born in Buffalo, New York, does that seem right?", and maybe "The last question says the name of her first pet was Mr. Doodle", hopefully getting most of that information.  
+
 Finally, I would claim that the ATM's pin number has been changed, and ask Eric to provide the previous PIN to restore it. Hopefully this would give the final piece of information.  
 
 This pretex has some issues, as later, Eric would likely tell his mother about this interaction, prompting her to possibly change her security questions and PIN number. Also, if Eric asks for personally identifiable information like the previous balance of his mother's account, I would have no way of answering correctly. In the worst case scenario, Eric is currently with his mom, blowing the whole thing to smithereens. Maybe in that case, I could claim that the number on file for his mom has a typo or something to that effect. Hopefully, the rushed nature of the questions would make Eric take little time to consider the logic of the situation.
