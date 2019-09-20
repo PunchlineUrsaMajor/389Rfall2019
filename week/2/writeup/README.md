@@ -26,8 +26,10 @@ Digital acknowledgement: Charles Schneider
 7. Shodan shows that the site is an Apache/2.4.29 Ubuntu server. It also shows that the ssh service is OpenSSH for Ubuntu, so the server is likely running Ubuntu.
 
 8. Flags:
-From inspect element on wattsamp.net: *CMSC389R-{html_h@x0r_lulz}
-From wattsamp.net/robots.txt: *CMSC389R-{n0_indexing_pls}
+From inspect element on wattsamp.net: *CMSC389R-{html_h@x0r_lulz} 
+
+From wattsamp.net/robots.txt: *CMSC389R-{n0_indexing_pls} 
+
 From dnsdumpster of wattsamp.net: *CMSC389R-{Do_you-N0T_See_this}
 
 ### Part 2 (75 pts)
