@@ -32,27 +32,32 @@ Digital acknowledgement: Charles Schneider
 2. The results of running `$ python carver.py greetz.fpff` are included in this directory.
 i. The file was generated on March 27, 2019 at 12:15AM.
 ii The file was authored by fl1nch.
-iii.```Section 1
-    Section Type: 1 (SECTION_ASCII)
-    Section Length: 24
-    Section Value: Hey you, keep looking :)
-Section 2
-    Section Type: 6 (SECTION_COORD)
+iii. 
+<pre><code>Section 1 
+    Section Type: 1 (SECTION_ASCII) 
+    Section Length: 24 
+    Section Value: Hey you, keep looking :) 
+Section 2 
+    Section Type: 6 (SECTION_COORD) 
     Section Length: 16
-    Section Value: (52.336035, 4.880673)
-Section 3
-    Section Type: 8 (SECTION_PNG)
-    Section Length: 202776
-    Section Value: Data written to file 88.png
-Section 4
-    Section Type: 1 (SECTION_ASCII)
-    Section Length: 44
-    Section Value: }R983CSMC_perg_tndid_u0y_yllufep0h{-R983CSMC
-Section 5
-    Section Type: 1 (SECTION_ASCII)
-    Section Length: 80
-    Section Value: Q01TQzM4OVIte2hleV9oM3lfeTBVX3lvdV9JX2RvbnRfbGlrZV95b3VyX2Jhc2U2NF9lbmNvZGluZ30=```
-iv. I found 3 three flags:
-First, in the file `88.png`, which was extracted from `greetz.fpff`, has the flag CMSC389R-{w31c0me_b@ck_fr0m_spr1ng_br3ak}.
-The ASCII text in Section 4 is just CMSC389R-{h0pefully_y0u_didnt_grep_CMSC389R} in reverse.
-The ASCII text in Section 5 looks like base64, and base64decoding it gave CMSC389R-{hey_h3y_y0U_you_I_dont_like_your_base64_encoding}.
+    Section Value: (52.336035, 4.880673) 
+Section 3 
+    Section Type: 8 (SECTION_PNG) 
+    Section Length: 202776 
+    Section Value: Data written to file 88.png 
+Section 4 
+    Section Type: 1 (SECTION_ASCII) 
+    Section Length: 44 
+    Section Value: }R983CSMC_perg_tndid_u0y_yllufep0h{-R983CSMC 
+Section 5 
+    Section Type: 1 (SECTION_ASCII) 
+    Section Length: 80 
+    Section Value: Q01TQzM4OVIte2hleV9oM3lfeTBVX3lvdV9JX2RvbnRfbGlrZV95b3VyX2Jhc2U2NF9lbmNvZGluZ30=</code></pre>
+    
+iv. I found 3 three flags: 
+
+First, in the file `88.png`, which was extracted from `greetz.fpff`, has the flag CMSC389R-{w31c0me_b@ck_fr0m_spr1ng_br3ak}. 
+
+The ASCII text in Section 4 is just CMSC389R-{h0pefully_y0u_didnt_grep_CMSC389R} in reverse.  
+
+The ASCII text in Section 5 looks like base64, and base64decoding it gave CMSC389R- {hey_h3y_y0U_you_I_dont_like_your_base64_encoding}.
