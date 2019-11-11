@@ -17,7 +17,7 @@ Digital acknowledgement: Charles Schneider
 
 3. The nmap scan, as well as the login, download, and upload, are all from 159.203.113.181, which GeoIP says is located in Clifton, New Jersey.
 
-4. The attackers are using port 21 to steal files. This port is commonly used for the FTP protocol.
+4. The attackers are using port 21 to steal files. This port is commonly used for FTP.
 
 5. The attackers stole the file `find_me.jpeg`, which is a valid jpeg file that does not seem to contain any other information.
 
@@ -27,11 +27,14 @@ Digital acknowledgement: Charles Schneider
 
 ### Part 2 (55 Pts)
 
-1. See `carver.py`.
+1. See `carver.py`. 
 
-2. The results of running `$ python carver.py greetz.fpff` are included in this directory.
-i. The file was generated on March 27, 2019 at 12:15AM.
-ii The file was authored by fl1nch.
+2. The results of running `$ python carver.py greetz.fpff` are included in this directory. 
+
+i. The file was generated on March 27, 2019 at 12:15AM. 
+
+ii The file was authored by fl1nch. 
+
 iii. 
 <pre><code>Section 1 
     Section Type: 1 (SECTION_ASCII) 
