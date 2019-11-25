@@ -19,6 +19,8 @@ Such a Quick Little, website!
 
 [http://142.93.136.81:5000/](http://142.93.136.81:5000/)
 
+Based on the comment provided, I assumed there would be some kind of SQL injection vulnerability. When I click on one of the exploits for sale, it shows that it's selected using `id=0`, so that must be the attack vector. I tested to see if -1 was a valid id, and it was not. So I tried entering `-1' OR '1'='1` as the id parameter, but it seems like there's something that detects attempted SQL injection. Remembering what was said in class, I tried replacing the OR with ||, and that worked (I guess it doesn't check for '='). So the final input was appending `-1'||'1'='1` to the URL, which displayed every entry in the database, including the flag, which is `CMSC389R-{y0u_ar3_th3_SQ1_ninj@}`.
+
 ### Part 2 (60 Pts)
 Complete all 6 levels of:
 
